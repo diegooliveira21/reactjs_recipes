@@ -1,0 +1,99 @@
+import React from "react";
+
+// Redux Components
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { createSelector } from "reselect";
+import { Creators as BattleActions } from "./store/ducks/battle";
+
+export const Battle = props => {
+  // Select object by Desectruturing
+  const { playerMeleeHit, playerFireballHit } = props;
+  const { battle } = props;
+  const { log } = props;
+  const { bossAmount } = props;
+
+  const battleLog = battle.log.map(item => <p>{item}</p>);
+
+  console.log(battle);
+  return (
+    <div
+      style={{
+        backgroundImage: "url(./battleground.png)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    >
+      <img src="./charizard.png" alt="Sprite" width="320" />
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "240px",
+          height: "8px",
+          display: "block",
+          background: "white",
+          borderRadius: "5px",
+          border: "2px solid #000",
+          marginBottom: "15px"
+        }}
+      >
+        <div
+          style={{ width: bossAmount, background: "red", height: "100%" }}
+        ></div>
+      </div>
+      <button
+        value="10"
+        onClick={() => {
+          playerMeleeHit();
+        }}
+      >
+        Melee Attack
+      </button>
+      <button
+        value="10"
+        onClick={() => {
+          playerFireballHit();
+        }}
+      >
+        Fireball
+      </button>
+      <div
+        style={{
+          width: "75%"
+        }}
+      >
+        <p style={{ height: "100px", overflow: "scroll" }}>{battleLog}</p>
+      </div>
+    </div>
+  );
+};
+
+const AMOUNT_HP = createSelector(
+  state => state.battle,
+  battle => {
+    return String((battle.boss.hp / battle.boss.hpMax) * 100) + "%";
+  }
+);
+
+const BATTLE_LOG = createSelector(
+  state => state.battle,
+  battle => {
+    return "l";
+  }
+);
+
+// Toda vez que o log do turno for adicionado, o battle também sera atualizado, causando um leak na perfomance
+const mapStateToProps = state => ({
+  battle: state.battle,
+  bossAmount: AMOUNT_HP(state)
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(BattleActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Battle);
