@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./login.style.sass";
 
-import bubblesaur from "./bubblesaur";
-import squirtle from "./squirtle";
-import charmander from "./charmander";
-
 const Login = () => {
-  const pokemonList = [bubblesaur, squirtle, charmander];
+  const [userAuth, setAuth] = userState({});
 
-  const pokemonChoice = pokemonList.map(pokemon => {
-    <></>;
-  });
+  return (
+    <>
+      <input type="name" onChange={setAuth({ name: e.target.value })}></input>
+      <input type="name" onChange={setAuth({ name: e.target.value })}></input>
+    </>
+  );
 };
