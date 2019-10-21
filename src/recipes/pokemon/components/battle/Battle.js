@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./battle.style.sass";
-// Only for test purpose
-import battleStyle from "./battle.style";
 
 // Redux Components
 import { connect } from "react-redux";
@@ -20,8 +18,8 @@ export const Battle = props => {
 
   console.log(battle);
   return (
-    <div style={battleStyle.buttonsWrapper}>
-      <img src="./charizard.png" alt="Sprite" width="320" />
+    <div className="battle-wrapper">
+      <img src="/charizard.png" alt="Sprite" width="320" />
       <div className="bossHPBar">
         <div className="bossHPBar__line" style={{ width: bossAmount }}></div>
       </div>
