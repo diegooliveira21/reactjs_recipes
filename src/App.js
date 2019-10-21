@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import AppPokemon from "./recipes/pokemon/AppPokemon";
+import ProjectJS from "./recipes/projectJS/projectJS";
 
 function App() {
   const [data, setData] = useState("0");
@@ -11,7 +11,7 @@ function App() {
     setData(a);
   }
 
-  return <AppPokemon />;
+  return <ProjectJS />;
 }
 
 export default App;
