@@ -50,6 +50,7 @@ export const Battle = props => {
   );
 };
 
+// createSelector => Acesse diretamente o dado querido no estado
 const AMOUNT_HP = createSelector(
   state => state.battle,
   battle => {
@@ -73,6 +74,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(BattleActions, dispatch);
 
+// Conecta, o state ao props, e o Creator, ao respectivo componente
 export default connect(
   mapStateToProps,
   mapDispatchToProps

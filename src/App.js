@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Form from "./recipes/formik/Form";
+import AppPokedex from "./recipes/pokedex/App";
 
 function App() {
   const [data, setData] = useState("0");
@@ -11,7 +11,7 @@ function App() {
     setData(a);
   }
 
-  return <Form />;
+  return <AppPokedex />;
 }
 
 export default App;
