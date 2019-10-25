@@ -8,6 +8,7 @@ const Header = () => (
     <Link to={"/drag"}>Drag</Link>
     <Link to={"/scroll"}>Scroll</Link>
     <Link to={"/paths"}>Paths</Link>
+    <Link to={"/gestures"}>Gestures</Link>
   </header>
 );
 
