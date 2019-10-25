@@ -11,22 +11,24 @@ const Drag = () => {
   });
 
   return (
-    <motion.div
-      className={styles.container}
-      ref={constraintsRef}
-      style={{
-        rotateY
-      }}
-    >
+    <div className={styles.drag}>
       <motion.div
-        className={styles.item}
-        drag="x"
-        dragConstraints={constraintsRef}
+        className={styles.container}
+        ref={constraintsRef}
         style={{
-          x
+          rotateY
         }}
-      />
-    </motion.div>
+      >
+        <motion.div
+          className={styles.item}
+          drag="x"
+          dragConstraints={constraintsRef}
+          style={{
+            x
+          }}
+        />
+      </motion.div>
+    </div>
   );
 };
 
