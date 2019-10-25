@@ -9,6 +9,7 @@ import AppAnimation from "./AppAnimation";
 import Header from "./components/header/Header";
 import Paths from "./components/paths/Paths";
 import Gestures from "./components/gestures/Gestures";
+import Variants from "./components/variants/Variants";
 
 const RouterConfig = () => (
   <>
@@ -16,6 +17,7 @@ const RouterConfig = () => (
     {/** @COMMENT A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
     <Switch>
+      <Route path="/variants" component={Variants} replace exact />
       <Route path="/gestures" component={Gestures} replace exact />
       <Route path="/paths" component={Paths} replace exact />
       <Route path="/scroll" component={Scroll} replace exact />

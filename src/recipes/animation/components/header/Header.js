@@ -9,6 +9,7 @@ const Header = () => (
     <Link to={"/scroll"}>Scroll</Link>
     <Link to={"/paths"}>Paths</Link>
     <Link to={"/gestures"}>Gestures</Link>
+    <Link to={"/variants"}>Variants</Link>
   </header>
 );
 
