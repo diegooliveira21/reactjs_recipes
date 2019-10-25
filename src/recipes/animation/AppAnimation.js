@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./animation.styles.sass";
+import styles from "./animation.module.sass";
 import { motion } from "framer-motion";
 
 const AppAnimation = () => {

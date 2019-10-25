@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./header.styles.sass";
+import styles from "./header.module.sass";
 
 const Header = () => (
-  <header>
+  <header className={styles.header}>
     <Link to={"/"}>Home</Link>
     <Link to={"/drag"}>Drag</Link>
     <Link to={"/scroll"}>Scroll</Link>

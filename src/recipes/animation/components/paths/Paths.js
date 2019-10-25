@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import "./paths.styles.sass";
+import styles from "./paths.module.sass";
 
 const icon = {
   hidden: {
@@ -16,11 +16,11 @@ const icon = {
 };
 
 const Paths = () => (
-  <div className="container">
+  <div className={styles.container}>
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      className="item"
+      className={styles.item}
     >
       <motion.path
         d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
