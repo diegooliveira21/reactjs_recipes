@@ -1,11 +1,13 @@
 // Actions
 const type = {
   BOSS_HIT: "BOSS_HIT",
-  PLAYER_HIT: "PLAYER_HIT"
+  PLAYER_HIT: "PLAYER_HIT",
+  CHOOSE_TEAM: "CHOOSE_TEAM"
 };
 
 // Reducer
 const initialState = {
+  team: [],
   boss: {
     hp: 2850,
     hpMax: 2850,
