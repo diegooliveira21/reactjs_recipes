@@ -15,6 +15,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "redux": "^4.0.4",
+    "redux-observable": "^1.2.0",
     "redux-starter-kit": "^0.7.0",
     "reselect": "^4.0.0"
   },
