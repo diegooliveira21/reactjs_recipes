@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 
-const Basic = () => (
+const Form = () => (
   <div>
     <h1>Anywhere in your app!</h1>
     <Formik
@@ -60,4 +60,4 @@ const Basic = () => (
   </div>
 );
 
-export default Basic;
+export default Form;

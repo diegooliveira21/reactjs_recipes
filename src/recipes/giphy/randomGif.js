@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getGiphy from "./giphyAPI";
+import Helmet from "react-helmet";
 
 const Iframe = props => {
   return (
@@ -30,7 +31,17 @@ const Gif = props => {
     fetchData();
   }, []);
 
-  return <Iframe gif={giphy} />;
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Random Gif Generator!</title>
+        <meta name="description" content="Generate your gif for free <3" />
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <Iframe gif={giphy} />
+    </>
+  );
 };
 
 export default Gif;
