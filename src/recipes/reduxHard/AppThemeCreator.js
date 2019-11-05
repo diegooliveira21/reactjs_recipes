@@ -3,14 +3,14 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
-import Battle from "./components/battle/Battle.js";
+import CreatorTheme from "./ThemeCreator.js";
 
-const AppPokemon = () => {
+const AppThemeCreator = () => {
   return (
     <Provider store={store}>
-      <Battle />
+      <CreatorTheme />
     </Provider>
   );
 };
 
-export default AppPokemon;
+export default AppThemeCreator;

@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "./battle.style.sass";
 
 // Redux Components
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createSelector } from "reselect";
-import { Creators as BattleActions } from "./store/ducks/battle";
+import { Creators as BattleActions } from "../../store/ducks/battle";
 
 export const Battle = props => {
   // Select object by Desectruturing
@@ -17,31 +18,10 @@ export const Battle = props => {
 
   console.log(battle);
   return (
-    <div
-      style={{
-        backgroundImage: "url(./battleground.png)",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
-      <img src="./charizard.png" alt="Sprite" width="320" />
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "240px",
-          height: "8px",
-          display: "block",
-          background: "white",
-          borderRadius: "5px",
-          border: "2px solid #000",
-          marginBottom: "15px"
-        }}
-      >
-        <div
-          style={{ width: bossAmount, background: "red", height: "100%" }}
-        ></div>
+    <div className="battle-wrapper">
+      <img src="/charizard.png" alt="Sprite" width="320" />
+      <div className="bossHPBar">
+        <div className="bossHPBar__line" style={{ width: bossAmount }}></div>
       </div>
       <button
         value="10"
@@ -70,6 +50,7 @@ export const Battle = props => {
   );
 };
 
+// createSelector => Acesse diretamente o dado querido no estado
 const AMOUNT_HP = createSelector(
   state => state.battle,
   battle => {
@@ -93,6 +74,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(BattleActions, dispatch);
 
+// Conecta, o state ao props, e o Creator, ao respectivo componente
 export default connect(
   mapStateToProps,
   mapDispatchToProps
