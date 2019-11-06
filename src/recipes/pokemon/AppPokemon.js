@@ -3,12 +3,14 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
-import Battle from "./components/battle/Battle.js";
+import Team from "./components/team/Team";
+
+console.log(store);
 
 const AppPokemon = () => {
   return (
     <Provider store={store}>
-      <Battle />
+      <Team />
     </Provider>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./pokedex.style.sass";
+import styles from "./pokedex.module.sass";
 import { getPokemons } from "../../services/pokemons/pokemons.service.js";
 
 const Pokedex = props => {
